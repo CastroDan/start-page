@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html id="all">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Start Page</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="clock.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="backing"></div>
+            <div id="wording"></div>
+            <form method="GET" action="http://www.google.com/search">
+                <input class="search" type="text" name="q" autofocus="true" placeholder="Google Search"/>
+            </form>
+            <div class="clock-container">
+                <span id='clock'></span>
+            </div>
+
+            <div id="myDIV" class="header">
+                <input class="task" type="text" id="myInput" placeholder="Add a Task">
+                <span onclick="newElement()" class="addBtn">Add</span>
+            </div>
+
+            <div class="table">
+            <h3>Tasks</h3>
+            <ul class="tasks" id="myUL">
+                
+            </ul>
+
+            </div>
+
+            <div class="navig-list">
+            <ul class="navig">
+                <li><a>Academics</a>
+                    <ul>
+                    <li><a href="https://joess.mst.edu/">JoeSS</a></li>
+                    <li><a href="https://canvas.mst.edu/">Canvas</a></li>
+                    <li><a href="https://papercut.mst.edu/">PaperCut</a></li>
+                    <li><a href="http://www.mst.edu/">MST</a></li>
+                    <li><a href="https://orgsync.com/home/622">OrgSync</a></li>
+                    <li><a href="https://git-classes.mst.edu/users/sign_in">Git-Classes</a></li>
+                    <li><a href="http://web.mst.edu/~ricardom/CS4096/17.3/">CS 4096</a></li>
+                    <li><a href="http://web.mst.edu/~ricardom/CS5001/17.3/">Deep Learning</a></li>
+                    <li><a href="https://sites.google.com/site/haoyixiongshomepage/">Networks</a></li>
+                    <li><a href="http://registrar.mst.edu/media/administrative/registrar/documents/calendars/fs17dates.pdf">Deadlines</a></li>
+                    <li><a href="https://web.mst.edu/~taylorpat/Courses_files/IntroSecurity.html">Security</a></li>
+                    </ul>
+                </li>
+                <li><a>Media</a>
+                    <ul>
+                    <li><a href="https://www.youtube.com">YouTube</a></li>
+                    <li><a href="https://www.twitch.tv/">Twitch</a></li>
+                    <li><a href="http://imgur.com/">Imgur</a></li>
+                    <li><a href="https://www.reddit.com/">Reddit</a></li></ul>
+                </li>
+                <li><a>Programming</a>
+                    <ul>
+                    <li><a href="https://docs.python.org/3/">Python</a></li>
+                    <li><a href="https://docs.oracle.com/javase/tutorial/">Java</a></li>
+                    <li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/csharp">C#</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+                    <li><a href="http://www.cplusplus.com/doc/">C++</a></li>
+                    <li><a href="https://github.com/">GitHub</a></li>
+                    <li><a href="https://tree.taiga.io/">Taiga</a></li></ul>
+                </li>
+                <li><a>Desk</a>
+                    <ul>
+                    <li><a href="https://sites.google.com/a/mst.edu/ucfd/home">Site</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1axUrFdUE7K9yyBZuzpjVbqoo9W8buosm-m2pwQofIcg/edit#gid=542743">Schedule</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1KFPkl7lnSPjiPGZmK1DBsWBOO0x3EDeIOPBwNqOuL0Y/edit#gid=1522182122">Equipment Log</a></li>
+                    <li><a href="https://docs.google.com/forms/viewform?hl=en&id=1ciNDSCXSjThWcO3-MqP8MyNPXJK1NN9d1H4hhMJr-gQ">Tasks Log</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1EOoEYdyrT1Lu1zI_PsrYX03FeQFLH7YCMdkG3Qk4zvc/edit#gid=1543243456">Register Log</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1lWBH3_NSAHt1DP_3zAXyfini3d79BVk_qKRg9DcpyZE/edit#gid=1349587507">Shift Change</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/13zMPzak4j0EBijzTjqWgedU-GhaqEBdtSR-MXOSiywo/edit#gid=0">Hour Tracker</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1KBbzPbOntYN-PQWtWI8_ZzBDBGiWVhx6m-WQiHxTafk/edit#gid=379662761">Suggestions</a></li></a></li></ul>
+                </li>
+                <li><a>Google Drive</a>
+                    <ul>
+                    <li><a href="https://calendar.google.com/calendar/render#main_7">Calendar</a></li>
+                    <li><a href="https://drive.google.com/drive/u/0/my-drive">Drive</a></li>
+                    <li><a href="https://docs.google.com/document/u/0/?tgif=d">Docs</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/u/0/?tgif=d">Sheets</a></li>
+                    <li><a href="https://docs.google.com/forms/u/0/?tgif=d">Forms</a></li>
+                    <li><a href="https://docs.google.com/presentation/u/0/?tgif=c">Slides</a></li></ul>
+                </li>
+                <li><a>Communication</a>
+                    <ul>
+                    <li><a href="https://mail.google.com/mail/u/0/#inbox">GMail</a></li>
+                    <li><a href="https://outlook.live.com/owa/?realm=hotmail.com&path=/mail/inbox">Outlook</a></li>
+                    <li><a href="https://web.groupme.com/chats">GroupMe</a></li>
+                    <li><a href="https://mstucdesk.slack.com/">Slack</a></li>
+                    <li><a href="https://discordapp.com/channels/349684016988946433/349684016988946434">Discord</a></li></ul>
+                </li>
+                <li><a>Finances</a>
+                    <ul>
+                    <li><a href="https://hrprd.umsystem.edu/psp/hrprd/EMPLOYEE/HRMS/c/ROLE_EMPLOYEE.TL_MSS_EE_SRCH_PRD.GBL?pts_Portal=EMPLOYEE&pts_PortalHostNode=HRMS&pts_Market=GBL">MyHR</a></li>
+                    <li><a href="https://www.pnc.com/en/personal-banking/banking/online-and-mobile-banking.html">PNC</a></li>
+                    <li><a href="https://www.amazon.com/">Amazon</a></li>
+                    <li><a href=#>???</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="to-do.js"></script>
+    </body>
+</html>
