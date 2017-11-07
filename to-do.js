@@ -19,13 +19,16 @@ var tasks = []
 
 // Load everything from local storage into list
 window.onload = function WindowLoad(event) {
-  
+  for(let i = 1; i <= 7; i++){
+    if(localStorage.getItem("task"+i) == "null"){
+      localStorage.setItem("task"+i, "")
+    }
+  }
+
   for(let i = 1; i <= 7; i++)
   {
-    tasks[i] = ""
     if(localStorage.getItem("task"+i) != "" && localStorage.getItem("task"+i) !== "null"){
       loadElement(localStorage.getItem("task"+i))
-      tasks[i] = localStorage.getItem
     }
   }
 }
