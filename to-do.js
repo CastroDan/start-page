@@ -132,7 +132,7 @@ function setLocalStorage(value) {
   const size = 7
   for (let i = 1; i <= size; i++){
     console.log(localStorage.getItem("task"+i))
-    if (localStorage.getItem("task"+i) === 'undefined' || localStorage.getItem("task"+i) === 'null' || localStorage.getItem("task"+i) === ""){
+    if (localStorage.getItem("task"+i) === 'undefined' || localStorage.getItem("task"+i) == "null" || localStorage.getItem("task"+i) == ""){
       localStorage.setItem("task"+i, value)
       console.log("Succeeded with: task " + i + ", " + value)
       return true
