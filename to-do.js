@@ -31,7 +31,7 @@ window.onload = function WindowLoad(event) {
   //Load existing tasks from local storage
   for(let i = 1; i <= 7; i++)
   {
-    if(localStorage.getItem("task"+i) != "" && localStorage.getItem("task"+i) !== null){
+    if(localStorage.getItem("task"+i) !== "" && localStorage.getItem("task"+i) !== null){
       loadElement(localStorage.getItem("task"+i))
     }
   }
@@ -40,7 +40,6 @@ window.onload = function WindowLoad(event) {
 // Create a "close" button and append it to each list item
 var ul = document.getElementById("myUL")
 var myNodelist = ul.getElementsByTagName("LI");
-var i;
 for (let i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -51,7 +50,6 @@ for (let i = 0; i < myNodelist.length; i++) {
 
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
-var i;
 for (let i = 0; i < close.length; i++) {
   console.log("close button clicked")
   close[i].onclick = function() {
@@ -128,7 +126,6 @@ function loadElement(inputValue) {
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
-      let str = 
       delLocalStorage(this.parentElement.textContent.slice(0, -1))
     }
   }
@@ -154,7 +151,7 @@ function delLocalStorage(value) {
   const size = 7
   console.log(value)
   for (let i = 1; i <= size; i++){
-    if(localStorage.getItem("task"+i) == value) {
+    if(localStorage.getItem("task"+i) === value) {
       localStorage.setItem("task"+i, "");
       return;
     }
