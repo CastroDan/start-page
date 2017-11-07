@@ -19,16 +19,19 @@ var tasks = []
 
 // Load everything from local storage into list
 window.onload = function WindowLoad(event) {
+  //Initialize null LocalStorage elements
   for(let i = 1; i <= 7; i++){
-    if(localStorage.getItem("task"+i) === 'null'){
+    if(localStorage.getItem("task"+i) === null){
       console.log("initialized task list var")
       localStorage.setItem("task"+i, "")
+    } else {
+      console.log("detected non-null value")
     }
   }
-
+  //Load existing tasks from local storage
   for(let i = 1; i <= 7; i++)
   {
-    if(localStorage.getItem("task"+i) != "" && localStorage.getItem("task"+i) !== "null"){
+    if(localStorage.getItem("task"+i) != "" && localStorage.getItem("task"+i) !== null){
       loadElement(localStorage.getItem("task"+i))
     }
   }
@@ -135,7 +138,7 @@ function setLocalStorage(value) {
   const size = 7
   for (let i = 1; i <= size; i++){
     console.log(localStorage.getItem("task"+i))
-    if (localStorage.getItem("task"+i) === 'undefined' || localStorage.getItem("task"+i) == "null" || localStorage.getItem("task"+i) == ""){
+    if (localStorage.getItem("task"+i) === 'undefined' || localStorage.getItem("task"+i) === null || localStorage.getItem("task"+i) === ""){
       localStorage.setItem("task"+i, value)
       console.log("Succeeded with: task " + i + ", " + value)
       return true
