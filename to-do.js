@@ -20,9 +20,7 @@ var tasks = []
 // Load everything from local storage into list
 window.onload = function WindowLoad(event) {
   for(let i = 1; i <= 7; i++){
-    if(localStorage.getItem("task"+i) === "null"){
-      localStorage.setItem("task"+i, "")
-    }
+    delLocalStorage('null')
   }
 
   for(let i = 1; i <= 7; i++)
@@ -133,7 +131,7 @@ function loadElement(inputValue) {
 function setLocalStorage(value) {
   const size = 7
   for (let i = 1; i <= size; i++){
-    console.log(localStorage.getItem)
+    console.log(localStorage.getItem("task"+i))
     if (localStorage.getItem("task"+i) === 'undefined' || localStorage.getItem("task"+i) === 'null' || localStorage.getItem("task"+i) === ""){
       localStorage.setItem("task"+i, value)
       console.log("Succeeded with: task " + i + ", " + value)
