@@ -19,6 +19,7 @@ var tasks = []
 
 // Load everything from local storage into list
 window.onload = function WindowLoad(event) {
+  
   for(let i = 1; i <= 7; i++)
   {
     tasks[i] = ""
