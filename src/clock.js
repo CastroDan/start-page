@@ -1,36 +1,49 @@
-$(window).on('load', function () {
+$(window).on('load', function ()
+{
     startTime();
 })
 
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
+function startTime()
+{
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
     checkSec(s);
     setPaper(h);
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
+    let t = setTimeout(startTime, 500);
 }
 
-function checkTime(i){
+function checkTime(i)
+{
     if (i < 10) {i = "0" + i};
     return i;
 }
 
-function setPaper(h){
-    if (h < 7 || h >= 20) {
+function setPaper(h)
+{
+    if (h <= 6 || h > 20)
+    {
         $("html").css("background-image", "url(img/minecraft-night.jpg)");
     }
-
+    else if (h <= 11)
+    {
+        $("html").css("background-image", "url(img/minecraft-morning.png)");
+    }
+    else if (h <= 16)
+    {
+        $("html").css("background-image", "url(img/minecraft-underhang.jpg)");
+    }
     else {
-        $("html").css("background-image", "url(img/minecraft.png)");;
+        $("html").css("background-image", "url(img/minecraft.png)");
     }
 }
 
-function checkSec(i){
+function checkSec(i)
+{
     if (i%2 == 1) {
         document.getElementById('clock').style.color = "white";
     }
